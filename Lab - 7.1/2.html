@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+
+    <script>
+        let emailValidation = () => {
+        const email = document.getElementById("email").value;
+        if (email === "") {
+            alert("Please enter your email address.");
+            return false;
+        } else if (mailFormat.test(email)) {
+            alert("Invalid email. Please enter a valid email.");
+            return false;
+        }
+        return true;
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Email</legend>
+        <form action="3.html" onsubmit="return emailValidation()">
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="text" id="email">
+                        <div class="tooltip-container">
+                            <input type="button" value="i" id="suggestion">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>

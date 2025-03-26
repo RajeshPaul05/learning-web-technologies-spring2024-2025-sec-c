@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Picture</title>
+
+    <script>
+        let profilePicNdUserIdValidation = () => {
+            const userId = document.getElementById("userId").value;
+            const picture = document.getElementById("picture").files[0]; 
+
+            if (userId === "") { 
+                alert("Please enter your User ID.");
+                return false;
+            }
+
+            if (!picture) { 
+                alert("Please upload a profile picture.");
+                return false;
+            }
+
+            return true; 
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend><h3>Profile Picture</h3></legend>
+        <form action="index.html" onsubmit="return profilePicNdUserIdValidation()">
+            <table>
+                <tr>
+                    <td>User Id</td>
+                    <td><input type="text" name="" id="userId" value=""></td>
+                </tr>
+                <tr>
+                    <td>Picture</td>
+                    <td><input type="file" name="" id="picture" accept="image/*"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>

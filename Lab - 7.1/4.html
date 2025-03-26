@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date of Birth</title>
+
+    <script>
+        let dobValidation = () => {
+        const dobInput = document.getElementById("dob");
+        const dobValue = dobInput.value;
+
+        if (!dobValue) {
+            alert("Please enter your date of birth.");
+            return false;
+        }
+        
+        const dateObj = new Date(dobValue);
+        if (isNaN(dateObj.getTime())) {
+            alert("Please enter a valid date.");
+            return false;
+        }
+
+        return true;
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend><h3>Date of Birth</h3></legend>
+        <form action="5.html" onsubmit="return dobValidation()">
+            <table>
+                <tr>
+                    <td><input type="date" name="" id="dob"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>

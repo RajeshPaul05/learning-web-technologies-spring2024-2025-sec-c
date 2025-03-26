@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree</title>
+
+    <script>
+        let degreeValidation = () => {
+        const ssc = document.getElementById("ssc");
+        const hsc = document.getElementById("hsc");
+        const bsc = document.getElementById("bsc");
+
+        if (!(ssc.checked || hsc.checked || bsc.checked)) {
+            alert("At least SSC required.");
+            return false;
+        }
+        return true;
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend><h3>Degree</h3></legend>
+        <form action="6.html" onsubmit="return degreeValidation()">
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="" id="ssc"> SSC
+                        <input type="checkbox" name="" id="hsc"> HSC
+                        <input type="checkbox" name="" id="bsc"> BSC
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>

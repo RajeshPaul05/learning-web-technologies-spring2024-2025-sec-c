@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validation</title>
+
+    <script>
+        function nameValidation() {
+            const name = document.getElementById("name").value.trim();
+            let spaceCount = 0;
+
+            if (name === "") {
+                alert("Please enter your name");
+                return false;
+            }
+            let firstChar = name.charAt(0);
+            if (!((firstChar >= 'a' && firstChar <= 'z') || (firstChar >= 'A' && firstChar <= 'Z'))) {
+                alert("Name must start with a letter");
+                return false;
+            }
+            for (let i = 0; i < name.length; i++) {
+                if (name[i] === ' ') {
+                    spaceCount++;
+                }
+            }
+            if (spaceCount < 1) {
+                alert("Name must contain at least two words");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Name</legend>
+        <form action="2.html" id="nameForm" onsubmit="return nameValidation()">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+</html>
